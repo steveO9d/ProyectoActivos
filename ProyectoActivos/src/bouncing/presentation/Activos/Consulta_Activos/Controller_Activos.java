@@ -3,22 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bouncing.presentation;
+package bouncing.presentation.Activos.Consulta_Activos;
 
 /**
  *
- * @author Escinf
+ * @author Tulio
  */
-public class Controller {
-    Model model;
-    View view;
+public class Controller_Activos {
+        Model_Activos model;
+    View_Activos view;
 
-    public Controller(Model model, View view) {
+    public Controller_Activos(Model_Activos model, View_Activos view) {
         this.model = model;
         this.view = view;
         view.setModel(model);
         view.setController(this);
     }
-
- 
+    
+    
+    public void iniciarVista(){
+        view.setVisible(true);
+    }   
 }

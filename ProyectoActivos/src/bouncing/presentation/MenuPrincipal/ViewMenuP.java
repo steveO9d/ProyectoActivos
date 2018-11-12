@@ -65,9 +65,11 @@ public class ViewMenuP extends javax.swing.JFrame implements Observer{
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         menuRegistrador = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -173,6 +175,26 @@ public class ViewMenuP extends javax.swing.JFrame implements Observer{
 
         menuRegistrador.setText("Registrador");
 
+        jMenu2.setText("Bienes");
+
+        jMenuItem4.setText("Mantenimiento");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem6.setText("Incluir");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
+        menuRegistrador.add(jMenu2);
+
         jMenu1.setText("Solicitudes");
 
         jMenuItem2.setText("Listado");
@@ -184,14 +206,6 @@ public class ViewMenuP extends javax.swing.JFrame implements Observer{
         jMenu1.add(jMenuItem2);
 
         menuRegistrador.add(jMenu1);
-
-        jMenuItem8.setText("Bienes");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
-            }
-        });
-        menuRegistrador.add(jMenuItem8);
 
         jMenuBar1.add(menuRegistrador);
 
@@ -241,10 +255,6 @@ public class ViewMenuP extends javax.swing.JFrame implements Observer{
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         controller.iniciarListadoSolicitud();
@@ -254,6 +264,16 @@ public class ViewMenuP extends javax.swing.JFrame implements Observer{
         // TODO add your handling code here:
         controller.iniciarListadoSolicitud();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        controller.inicarMantenimientoBienes();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        controller.iniciarIncluirBienes();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     @Override
     public void update(Observable o, Object arg) {
@@ -266,14 +286,16 @@ public class ViewMenuP extends javax.swing.JFrame implements Observer{
     private javax.swing.JMenuItem itemVerSolicitudes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JMenu menuAdministrador;

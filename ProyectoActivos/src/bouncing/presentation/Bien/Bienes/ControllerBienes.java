@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bouncing.presentation.RegistroBienes.Bienes;
+package bouncing.presentation.Bien.Bienes;
 
 import bouncing.DAO.GlobalException;
 import bouncing.DAO.NoDataException;
@@ -28,6 +28,12 @@ public class ControllerBienes {
       Solicitud seleccionada=model.getRowAt(row);
       return seleccionada;
     }
+
+    public ViewBienes getView() {
+        return view;
+    }
+    
+    
     
     public  void listarSolicitud() throws GlobalException, NoDataException{
         model.listarSolicitud();

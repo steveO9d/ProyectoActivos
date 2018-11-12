@@ -27,6 +27,38 @@ public class DaoSolicitud extends Servicio {
     public DaoSolicitud() {
     }
 
+    public Solicitud buscarSolicitud(String numcomprobante) throws Exception {
+        Solicitud r = new Solicitud();
+        try {
+            conectar();
+            CallableStatement stm = conexion.prepareCall(BUSCARSOLICITUD);
+            stm.registerOutParameter(1, OracleTypes.CURSOR);
+            stm.setString(2, numcomprobante);
+            stm.execute();
+            ResultSet rs = (ResultSet) stm.getObject(1);
+            if (rs.next()) {
+                r = new Solicitud(
+                        rs.getString("numsolicitud"),
+                        rs.getString("numcomprobante"),
+                        rs.getString("fecha"),
+                        rs.getString("tipoadquisicion"),
+                        rs.getInt("cantidadbienes"),
+                        rs.getDouble("montototal"),
+                        rs.getString("razonrechazo"),
+                        rs.getString("estado"),
+                        null, null);
+            } else {
+                throw new Exception("El estudiante no existe");
+            }
+        } catch (SQLException ex) {
+            System.err.printf("Excepción: '%s'%n",
+                    ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DaoSolicitud.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return r;
+    }
+
     // PROCEDIMIENTOS ALMACENADOS
     public void insertarSolicitud(Solicitud solicitud) throws GlobalException, NoDataException {
         try {
@@ -40,7 +72,9 @@ public class DaoSolicitud extends Servicio {
             pstmt.setString(2, solicitud.getFecha());
             pstmt.setString(3, solicitud.getTipoAdquisicion());
             pstmt.setInt(4, solicitud.getCantidadBienes());
+            System.out.println(solicitud.getCantidadBienes());
             pstmt.setDouble(5, solicitud.getMontoToTal());
+            System.out.println(solicitud.getMontoToTal());
             pstmt.setString(6, solicitud.getRazonRechazo());
             pstmt.setString(7, solicitud.getEstado());
             pstmt.setObject(8, null);
@@ -55,7 +89,6 @@ public class DaoSolicitud extends Servicio {
             throw new GlobalException(e.getMessage());
         }
     }
-
 
     //FUNCIONES ALMACENADAS
     public List<Solicitud> listarSolicitudes() throws GlobalException, NoDataException {
@@ -112,5 +145,7 @@ public class DaoSolicitud extends Servicio {
             = "{call insertarSolicitud(?,?,?,?,?,?,?,?,?)}";
     private static final String LISTARSOLICITUD
             = "{? = call listarSolicitudes()}";
+    private static final String BUSCARSOLICITUD
+            = "{? = call buscarSolicitud(?)}";
 
 }

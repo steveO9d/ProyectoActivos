@@ -29,24 +29,32 @@ public class DaoBien extends Servicio {
         try {
             conectar();
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(DaoBien.class.getName()).log(Level.SEVERE, null, ex);
+            throw new GlobalException(ex.getMessage());
         }
         try {
             PreparedStatement pstmt = conexion.prepareStatement(INSERTARBIEN);
             pstmt.setString(1, bien.getSerial());
-            pstmt.setString(2, bien.getIdCategoria().getDescripcionCategoria());
+            pstmt.setString(2, bien.getDescripcion());
             pstmt.setString(3, bien.getMarca());
             pstmt.setString(4, bien.getModelo());
             pstmt.setDouble(5, bien.getPrecioUnitario());
-            pstmt.setString(6, bien.getNumSolicitudBien().getNumSolicitud());
-            pstmt.setString(7, bien.getDescripcion());
+            if (bien.getNumSolicitudBien() != null) {
+                pstmt.setString(6, bien.getNumSolicitudBien().getNumSolicitud());
+            } else {
+                pstmt.setString(6, null);
+            }
+            if (bien.getIdCategoria() != null) {
+                pstmt.setString(7, bien.getIdCategoria().getDescripcionCategoria());
+            } else {
+                pstmt.setString(7, null);
+            }
             int exito = pstmt.executeUpdate();
 
             if (exito != 1) {
                 throw new Exception("Solicitud no ingresada");
             }
         } catch (Exception e) {
-            throw new GlobalException("Solicitud duplicada");
+            throw new GlobalException(e.getMessage());
         }
     }
 
@@ -102,7 +110,7 @@ public class DaoBien extends Servicio {
     }
 
     private static final String INSERTARBIEN
-            = "{call INSERTARBIEN(?, ?, ?, ?, ?, ?, ?}";
+            = "{call INSERTARBIEN(?, ?, ?, ?, ?, ?, ?)}";
     private static final String LISTARBIENES
             = "{? = call LISTARBIEN()}";
 

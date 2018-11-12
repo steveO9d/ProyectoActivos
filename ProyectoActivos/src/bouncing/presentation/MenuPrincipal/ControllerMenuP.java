@@ -5,7 +5,10 @@
  */
 package bouncing.presentation.MenuPrincipal;
 
+import proyectoactivos.ProyectoActivos;
+import static proyectoactivos.ProyectoActivos.CONTROL_CATALOGO_BIENES;
 import static proyectoactivos.ProyectoActivos.CONTROL_EDICION_SOLICITUD;
+import static proyectoactivos.ProyectoActivos.CONTROL_INCLUIR_BIENES;
 import static proyectoactivos.ProyectoActivos.CONTROL_LISTADO_SOLICITUD;
 
 /**
@@ -30,6 +33,14 @@ public class ControllerMenuP {
 
     public void iniciarListadoSolicitud() {
         CONTROL_LISTADO_SOLICITUD.iniciarVista();
+    }
+
+    public void inicarMantenimientoBienes() {
+        CONTROL_CATALOGO_BIENES.getView().setVisible(true);
+    }
+
+    public void iniciarIncluirBienes() {
+        CONTROL_INCLUIR_BIENES.getView().setVisible(true);
     }
 
 }

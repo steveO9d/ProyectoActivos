@@ -5,6 +5,12 @@
  */
 package proyectoactivos;
 
+import bouncing.presentation.Bien.Bienes.ControllerBienes;
+import bouncing.presentation.Bien.Bienes.ModelBienes;
+import bouncing.presentation.Bien.Bienes.ViewBienes;
+import bouncing.presentation.Bien.CatalogoBienes.ControllerCatalogoBienes;
+import bouncing.presentation.Bien.CatalogoBienes.ModelCatalogoBienes;
+import bouncing.presentation.Bien.CatalogoBienes.ViewCatalogoBienes;
 import bouncing.presentation.MenuPrincipal.ControllerMenuP;
 import bouncing.presentation.MenuPrincipal.ModelMenuP;
 import bouncing.presentation.MenuPrincipal.ViewMenuP;
@@ -36,9 +42,23 @@ public class ProyectoActivos {
         ViewListadoSolicitud viewListadoSolicitud = new ViewListadoSolicitud();
         ControllerListadoSolicitud controllerListadoSolicitud = new ControllerListadoSolicitud(modelListadoSolicitud, viewListadoSolicitud);
         CONTROL_LISTADO_SOLICITUD = controllerListadoSolicitud;
+        
+        ModelCatalogoBienes modelCatalogoBienes = new ModelCatalogoBienes();
+        ViewCatalogoBienes viewCatalogoBienes = new ViewCatalogoBienes();
+        ControllerCatalogoBienes controllerCatalogoBienes = new ControllerCatalogoBienes(modelCatalogoBienes, viewCatalogoBienes);
+        CONTROL_CATALOGO_BIENES = controllerCatalogoBienes;
+        
+        ModelBienes modelIncluir = new ModelBienes();
+        ViewBienes viewInlcuir = new ViewBienes();
+        ControllerBienes controlIncluirBienes = new ControllerBienes(modelIncluir, viewInlcuir);
+        CONTROL_INCLUIR_BIENES = controlIncluirBienes;
+        
     }
 
     public static ControllerSolicitud CONTROL_EDICION_SOLICITUD;
     public static ControllerListadoSolicitud CONTROL_LISTADO_SOLICITUD;
+    
+    public static ControllerCatalogoBienes CONTROL_CATALOGO_BIENES;
+    public static ControllerBienes CONTROL_INCLUIR_BIENES;
 
 }

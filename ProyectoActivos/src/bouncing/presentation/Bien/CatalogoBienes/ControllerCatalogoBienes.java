@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bouncing.presentation.RegistroBienes.CatalogoBienes;
+package bouncing.presentation.Bien.CatalogoBienes;
 
 import bouncing.DAO.DaoCatalogo;
 import bouncing.DAO.GlobalException;

@@ -5,10 +5,12 @@
  */
 package bouncing.presentation.Solicitudes.Edicion;
 
+import bouncing.DAO.DaoSolicitud;
 import bouncing.DAO.GlobalException;
 import bouncing.DAO.NoDataException;
 import bouncing.logic.Bien;
 import bouncing.logic.Solicitud;
+import java.util.List;
 
 /**
  *
@@ -36,6 +38,14 @@ public class ControllerSolicitud {
     public void agregarSolicitud(Solicitud nueva) throws GlobalException, NoDataException{
         model.agregarSolicitud(nueva);
     }
+    
+    public Solicitud buscarSolicitud(String numComprobante) throws Exception{
+        return model.buscarSolicitud(numComprobante);
+    }
+    
+    public void setTable(List<Bien> bienes){
+        model.setTableBien(bienes);
+    }    
 
     public void iniciarVista() {
         view.setVisible(true);

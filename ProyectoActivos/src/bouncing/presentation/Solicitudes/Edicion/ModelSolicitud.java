@@ -61,6 +61,11 @@ public class ModelSolicitud extends Observable {
         daoBien.insertarBien(nuevo);
         actualizar();
     }
+    
+    
+    public Solicitud buscarSolicitud(String numcomprobante) throws Exception{
+        return daoSolicitud.buscarSolicitud(numcomprobante);
+    }
 
     public void listarBien() throws GlobalException, NoDataException {
         List<Bien> rows = daoBien.listarBien();

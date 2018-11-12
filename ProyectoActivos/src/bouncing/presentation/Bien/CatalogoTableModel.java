@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bouncing.presentation.Catalogo;
+package bouncing.presentation.Bien;
 
 import bouncing.logic.CategoriaDeBien;
 import java.util.List;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bouncing.presentation.RegistroBienes.CatalogoBienes;
+package bouncing.presentation.Bien.CatalogoBienes;
 
 import bouncing.DAO.GlobalException;
 import bouncing.DAO.NoDataException;
@@ -82,7 +82,6 @@ public class ViewCatalogoBienes extends javax.swing.JFrame implements Observer {
 
         jTextField2.setText("jTextField2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         panelPrincipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));

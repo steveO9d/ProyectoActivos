@@ -61,6 +61,11 @@ public class Solicitud {
     }
 
     public double getMontoToTal() {
+        double suma = 0;
+        for(Bien b : bienes){
+            suma += b.getPrecioUnitario();
+        }
+        montoToTal += suma;
         return montoToTal;
     }
 
@@ -138,6 +143,7 @@ public class Solicitud {
 
     public void agregarBien(Bien nuevo) {
         bienes.add(nuevo);
+        cantidadBienes++;
     }
 
     public double definirMontoTotal() {

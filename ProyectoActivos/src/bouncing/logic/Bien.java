@@ -16,7 +16,7 @@ public class Bien {
         this.descripcion = " ";
         this.marca = " ";
         this.modelo = " ";
-        this.precioUnitario = 0.0;
+        this.precioUnitario = 0;
         this.numSolicitudBien = new Solicitud();
         this.idCategoria = new CategoriaDeBien();
     }

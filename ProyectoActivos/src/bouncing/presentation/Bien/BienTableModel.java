@@ -75,9 +75,11 @@ public class BienTableModel extends AbstractTableModel implements TableModel {
             case NUM_SOLICITUD_BIEN:
                 return bien.getNumSolicitudBien().getNumSolicitud();
             case CATEGORIA_BIEN:
-                return bien.getIdCategoria().getDescripcionCategoria();
+                if (bien.getIdCategoria() != null) {
+                    return bien.getIdCategoria().getDescripcionCategoria();
+                } else return "-";
             default:
-                return "";
+                return "-";
         }
     }
 

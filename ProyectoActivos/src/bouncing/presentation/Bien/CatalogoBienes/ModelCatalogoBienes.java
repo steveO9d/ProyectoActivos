@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bouncing.presentation.RegistroBienes.CatalogoBienes;
+package bouncing.presentation.Bien.CatalogoBienes;
 
 import bouncing.DAO.DaoCatalogo;
 import bouncing.DAO.GlobalException;
 import bouncing.DAO.NoDataException;
 import bouncing.logic.CategoriaDeBien;
-import bouncing.presentation.Catalogo.CatalogoTableModel;
+import bouncing.presentation.Bien.CatalogoTableModel;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;

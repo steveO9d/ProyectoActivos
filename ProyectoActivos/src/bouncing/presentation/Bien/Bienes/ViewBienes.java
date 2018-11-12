@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bouncing.presentation.RegistroBienes.Bienes;
+package bouncing.presentation.Bien.Bienes;
 
 import bouncing.DAO.GlobalException;
 import bouncing.DAO.NoDataException;
@@ -68,8 +68,6 @@ public class ViewBienes extends javax.swing.JFrame implements Observer{
         jButton2 = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
         btnListarActivos = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
