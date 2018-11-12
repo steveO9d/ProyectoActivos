@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectoactivos;
+package bouncing.Application;
+
+import bouncing.presentation.Controller;
+import bouncing.presentation.Model;
+import bouncing.presentation.View;
 
 /**
  *
@@ -11,11 +15,11 @@ package proyectoactivos;
  */
 public class ProyectoActivos {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Model model=new Model() ;
+        View view = new View();
+        Controller controller = new Controller(model,view);
+        view.setVisible(true);     
     }
     
 }
